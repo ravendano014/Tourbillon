@@ -318,22 +318,6 @@
                     break;
                 }
 
-                // Encuentra la parte correspondiente en jsonParts y actualiza sus propiedades
-                var partIndex = jsonParts[0].parts.findIndex(function (jsonPart) {
-                return jsonPart.mesh_id === pickedMesh.id;
-                });
-
-                if (partIndex !== -1) {
-                    var updatedPart = jsonParts[0].parts[partIndex];
-                    updatedPart.position[0].x = pickedMesh.position.x;
-                    updatedPart.position[0].y = pickedMesh.position.y;
-                    updatedPart.position[0].z = pickedMesh.position.z;
-                    updatedPart.rotation[0].x = BABYLON.Tools.ToDegrees(pickedMesh.rotation.x);
-                    updatedPart.rotation[0].y = BABYLON.Tools.ToDegrees(pickedMesh.rotation.y);
-                    updatedPart.rotation[0].z = BABYLON.Tools.ToDegrees(pickedMesh.rotation.z);
-                }
-                console.log(jsonParts);
-
                 });
             
             }
